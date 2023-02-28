@@ -1,29 +1,39 @@
-import Container from "react-bootstrap/Container";
-// import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import './Header.css'
+import React from 'react';
+import "./Header.css"
+import './font.css';
 
+function Header() {
+  const handleClick = () => {
+    const navBar = document.querySelector('.nav-bar');
+    navBar.classList.toggle('active');
+  }
 
-
-function header() {
   return (
-  	<header class="header">
-		<h1 class="logo"><a href="#">Assetwarranty</a></h1>
-      <ul class="main-nav">
-        <div class="dropdown">
-          
-          <a href="#" class='profile'>Profile</a>
-          <div class="menu">
-<a href = "#">  Product</a>
-<a href = "#">Dealer</a>
-<a href = "#">Enroll</a>
-          </div>
-          </div>
-      </ul>+
-	</header> 
-
-
+    <header>
+      <div className="logo" style={{ fontFamily: 'Axiforma' }}>Asset warranty</div>
+      <div className="profile" onClick={handleClick}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+      <nav className="nav-bar" >
+        <ul>
+          <li>
+            <a href="#" style={{ fontFamily: 'Axiforma' }} className="active">Product</a>
+          </li>
+          <li>
+            <a href="#" style={{ fontFamily: 'Axiforma' }} className="active">Dealer</a>
+          </li>
+          <li>
+            <a href="#" style={{ fontFamily: 'Axiforma' }} className="active">Enroll</a>
+          </li>
+          <li>
+            <a href="#"  style={{ fontFamily: 'Axiforma' }}className="active">Stock</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
-export default header;
+export default Header;
